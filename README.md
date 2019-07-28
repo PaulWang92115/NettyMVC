@@ -18,3 +18,6 @@ NettyMVC 是一个基于 Netty http 协议的轻量级高性能 IOC，MVC 框架
 3. 支持 @Service，@Repositry，@Autowired 等 IOC 注解。
 4. URI 路由解析，参数映射。
 5. Request 中支持多种参数类型，包括基本数据类型，List，Array，Map等等。
+
+## 结构图
+[结构图](https://github.com/PaulWang92115/NettyMVC/blob/master/nettymvc.png)
