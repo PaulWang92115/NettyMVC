@@ -12,9 +12,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String getUser(int id) {
-        if(null == userDao){
-            System.out.println("it;s null");
-        }
         return userDao.get(id);
     }
 }

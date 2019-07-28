@@ -37,7 +37,6 @@ public class AnnotationApplicationContext extends ApplicationContext {
     public AnnotationApplicationContext(String configuration) {
         super(configuration);
         String path  = xmlUtil.handlerXMLForScanPackage(configuration);
-        System.out.println(path);
 
         //执行包的扫描操作
         scanPackage(path);
@@ -268,26 +267,21 @@ public class AnnotationApplicationContext extends ApplicationContext {
 
             //根据别名获取到被装配的 bean 的实例
             Object instance = beanFactory.get(aliasName);
-            System.out.println("1111111166666666611111");
             try{
                 //从类中获取参数，判断是否有 @Autowired 注解
                 Field[] fields = clazz.getDeclaredFields();
                 for(Field f:fields){
                     if(f.isAnnotationPresent(Autowired.class)){
-                        System.out.println("7000009");
                         //开启字段的访问权限
                         f.setAccessible(true);
                         Autowired autoWired = f.getAnnotation(Autowired.class);
                         if(!"".equals(autoWired.value())){
-                            System.out.println("111999");
                             //注解里写了别名
                             f.set(instance, beanFactory.get(autoWired.value()));
 
                         }else{
-                            System.out.println("2222999");
                             //按类型名称
                             String fieldName = f.getType().getName();
-                            System.out.println("f:" +fieldName);
                             f.set(instance, beanFactory.get(fieldName));
                         }
                     }

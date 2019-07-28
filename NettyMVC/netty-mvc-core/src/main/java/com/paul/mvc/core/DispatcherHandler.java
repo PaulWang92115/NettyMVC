@@ -37,7 +37,6 @@ public class DispatcherHandler extends SimpleChannelInboundHandler {
             if(uri.contains("?")){
                 int index = uri.indexOf("?");
                 uri = uri.substring(0,index);
-                System.out.println(uri);
             }
             Method m = (Method) annotationApplicationContext.handleMapping.get(uri);
             if (null == m) {
@@ -86,7 +85,6 @@ public class DispatcherHandler extends SimpleChannelInboundHandler {
             if(paramAns.length > 0){
                 for(Annotation paramAn:paramAns){
                     if(RequestParam.class.isAssignableFrom(paramAn.getClass())){
-                        System.out.println("13mj");
                         RequestParam rp = (RequestParam) paramAn;
                         args[args_i++] = RequestParseUtil.getParamValue(parameters, paramClazz, rp, method, index);
                     }

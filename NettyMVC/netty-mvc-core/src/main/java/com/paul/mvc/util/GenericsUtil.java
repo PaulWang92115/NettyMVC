@@ -8,8 +8,6 @@ import java.util.List;
 
 /**
  * 泛型操作的工具类,通过反射获得Class声明的范型Class.
- * @author yunfeng.cheng
- * @create 2016-08-12
  */
 public class GenericsUtil {
 
