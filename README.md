@@ -20,4 +20,4 @@ NettyMVC 是一个基于 Netty http 协议的轻量级高性能 IOC，MVC 框架
 5. Request 中支持多种参数类型，包括基本数据类型，List，Array，Map等等。
 
 ## 结构图
-[结构图](https://github.com/PaulWang92115/NettyMVC/blob/master/nettymvc.png)
+![avatar](https://github.com/PaulWang92115/RPC/blob/PAUL_RELEASE_1906/doc/20190630164543928.png)
