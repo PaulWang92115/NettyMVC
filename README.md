@@ -81,8 +81,8 @@ NettyMVC 是一个基于 Netty http 协议的轻量级高性能 IOC，MVC 框架
     ```
     
 ## TODO
-目前方法参数与 request 匹配时必须使用 RequestParam 注解。
-对于没有实现接口的类如果注入时，@Autowired 注解必须指定实例名称。
+1. 目前方法参数与 request 匹配时必须使用 RequestParam 注解。
+2. 对于没有实现接口的类如果注入时，@Autowired 注解必须指定实例名称。
 
 以上两个问题因为目前无法获取参数名（不是参数类型），下一步将会进行 fix。
     
