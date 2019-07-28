@@ -20,4 +20,14 @@ NettyMVC 是一个基于 Netty http 协议的轻量级高性能 IOC，MVC 框架
 5. Request 中支持多种参数类型，包括基本数据类型，List，Array，Map等等。
 
 ## 结构图
-![avatar](https://github.com/PaulWang92115/RPC/blob/PAUL_RELEASE_1906/doc/20190630164543928.png)
+![avatar](https://github.com/PaulWang92115/NettyMVC/blob/master/nettymvc.png)
+
+## 快速开始
+1. 在项目中引入 netty-mvc-core 模块。
+2. 在 Maven 项目中的 resources 文件夹下创建 applicationContext.xml, 用来配置 IOC 的包扫描路径。
+   ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans>
+        <package-scan component-scan="org.test.demo" />
+    </beans>
+   ```
