@@ -31,3 +31,51 @@ NettyMVC 是一个基于 Netty http 协议的轻量级高性能 IOC，MVC 框架
         <package-scan component-scan="org.test.demo" />
     </beans>
    ```
+ 3. @Controller 对应控制层注解，@Service 对应服务层注解，@Respostry 对应持有层注解， @Autowired 做自动注入，@RequestMapping 做路由，
+    @RequestParam 做参数映射。
+    ```java
+    
+      @Controller
+      @RequestMapping("/user")
+      public class UserController {
+
+          @Autowired
+          private UserService userService;
+
+          @RequestMapping("/getUser")
+          public FullHttpResponse getUserById(FullHttpRequest request,@RequestParam("userId") int id,@RequestParam("name") String name){
+
+              String res = userService.getUser(id);
+              return HttpUtil.constructText(res);
+          }
+
+      }
+
+    ```
+    ```java
+    @Service("userService")
+      public class UserServiceImpl implements UserService {
+
+          @Autowired("userDao")
+          private UserDao userDao;
+
+          @Override
+          public String getUser(int id) {
+              return userDao.get(id);
+          }
+      }
+    ```
+    ```java
+    @Repository
+      public class UserDao {
+
+          public String get(int id){
+              if(id == 1){
+                  return "paul";
+              }else{
+                  return "wang";
+              }
+          }
+      }
+
+    ```
